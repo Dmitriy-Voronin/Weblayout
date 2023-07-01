@@ -1,0 +1,279 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+  /* scroll-behavior: smooth; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Open Sans', sans-serif;
+  /* background: #FFFFFF; */
+  min-height: 100vh;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+  margin: 0;
+}
+
+iframe {
+  border: none;
+}
+
+.site-conteiner {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1700px;
+  padding: 0 var(--container-padding);
+}
+
+:root {
+  --text-color-light: #FFFFFF;
+  --text-color-dark: #333333;
+  --light-middle-gray: #CACACA;
+  --violet-dark: #7943A4;
+  --violet-middle: #9D5CD0;
+  --violet-ultra-light: #D1A9F0;
+  --container-padding: 50px;
+  --burger-line: 3px;
+}
+
+.section-title {
+  font-weight: 400;
+  color: var(--text-color-dark);
+}
+
+.btn-reset {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 24px 35px;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 2px solid;
+  border-radius: 100px;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn_fill {
+  background-color: var(--violet-middle);
+  transition: box-shadow .2s ease-in-out;
+}
+
+.btn_fill::after {
+  border-color: #C283F3;
+}
+
+.btn:focus:not(:hover):not(:active)::after {
+  opacity: 1;
+}
+
+.btn_border {
+  color: var(--violet-middle);
+  border: 2px solid currentColor;
+}
+
+.btn_fill:hover {
+  box-shadow: inset 0 0 0 3px #D1A9F0;
+}
+
+.btn_fill:active {
+  box-shadow: inset 0 0 0 3px #D1A9F0;
+  background-color: #7943A4;
+}
+
+.link-focus {
+  position: relative;
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.link-focus:hover {
+  color: #C283F3;
+  outline: none;
+}
+
+.link-focus::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: -2px;
+  bottom: -4px;
+  background-color: #7943A4;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.link-focus:focus-visible:not(:hover):not(:active) {
+  color: var(--text-color-light);
+  outline: none;
+}
+
+.link-focus:focus-visible:not(:hover):not(:active)::before {
+  opacity: 1;
+}
+
+.link-focus:active {
+  color: #7943A4;
+  background-color: transparent;
+  outline: none;
+}
+
+.link {
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--violet-middle);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.link:hover::after {
+  opacity: 1;
+}
+
+.link:hover {
+  color: var(--violet-middle);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible:not(:hover):not(:active) {
+  color: var(--text-color-light);
+}
+
+
+.link:active {
+  color: var(--violet-dark);
+}
+
+.link:active::after {
+  background-color: var(--violet-dark);
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  bottom: -2px;
+  background-color: var(--violet-middle);
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.link:focus-visible:not(:hover):not(:active)::before {
+  opacity: 1;
+}
+
+
+@media (max-width: 610px) {
+  :root {
+    --container-padding: 15px;
+  }
+
+  .btn {
+    padding: 14px 19px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

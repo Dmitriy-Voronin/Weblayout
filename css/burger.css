@@ -1,0 +1,119 @@
+.burger {
+  position: relative;
+  padding: 0;
+  width: 36px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.burger__line {
+  position: absolute;
+  left: 0;
+  top: calc(50% - var(--burger-line) / 2);
+  width: 100%;
+  height:var(--burger-line);
+  background-color: var(--text-color-light);
+  transform-origin: left;
+  transform: scaleX(calc(28 / 36 * 100%));
+  transition: background-color .2s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--burger-line);
+  background-color: var(--text-color-light);
+  transition: background-color .2s ease-in-out;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+  transform-origin: left;
+  transform: scaleX(calc(24 / 36 * 100%));
+}
+
+.burger:hover .burger__line,
+.burger:hover::after,
+.burger:hover::before {
+  background-color: #9D5CD0;
+}
+
+.burger:focus-visible {
+  outline: none;
+}
+
+.burger:focus-visible .burger__line,
+.burger:focus-visible::after,
+.burger:focus-visible::before {
+  background-color: #9D5CD0;
+}
+
+.burger.is-opened .burger__line,
+.burger.is-closed .burger__line{
+  opacity: 0;
+}
+
+.is-opened.burger::before,
+.is-opened.burger::after,
+.is-closed.burger::before,
+.is-closed.burger::after {
+  transform-origin: center;
+}
+
+.is-opened.burger::before {
+  top: calc(50% - var(--burger-line) / 2);
+  transform: rotate(45deg);
+  animation-name: burger-before-open;
+  animation-duration: .5s;
+}
+
+.is-opened.burger::after {
+  bottom: calc(50% - var(--burger-line) / 2);
+  transform: scaleX(1) rotate(-45deg);
+  animation-name: burger-after-open;
+  animation-duration: .5s;
+}
+
+.is-closed.burger::before {
+  top: 0;
+  transform: rotate(0);
+  animation-name: burger-before-close;
+  animation-duration: .5s;
+}
+
+.is-closed.burger::after {
+  bottom: 0;
+  transform: scaleX(calc(24 / 36 * 100%)) rotate(0);
+  animation-name: burger-after-close;
+  animation-duration: .5s;
+}
+
+
+@media (max-width: 610px) {
+  :root {
+    --burger-line: 2px;
+  }
+
+  .burger {
+    width: 25px;
+    height: 18px;
+  }
+
+  .burger__line {
+    transform: scaleX(calc(16 / 25 * 100%));
+  }
+
+  .burger::after {
+    transform: scaleX(calc(10 / 25 * 100%));
+  }
+}
