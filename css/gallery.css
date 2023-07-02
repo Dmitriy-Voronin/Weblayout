@@ -153,6 +153,7 @@
   position: static;
   margin-right: 20px;
   text-align: center;
+  z-index: 1;
 }
 
 .gallery__button {

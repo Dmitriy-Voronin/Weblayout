@@ -52,10 +52,10 @@ const element = document.querySelector('.form__select');
 
   breakpoints: {
     // // when window width is >= 320px
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 10
-    // },
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
     // when window width is >= 480px
     421: {
       slidesPerView: 2,
